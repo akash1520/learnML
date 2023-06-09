@@ -44,10 +44,10 @@ We will build a web app. In which you can draw anything and the app will try to 
 
 ### DAY 1
 
-- [] Html file, with div with id content
-- [] add stylesheet and script
-- [] create a class and constructor for SketchPad
-- [] Use script to spawn Sketchpad on the htmlpage
+- [ ] Html file, with div with id content
+- [ ] add stylesheet and script
+- [ ] create a class and constructor for SketchPad
+- [ ] Use script to spawn Sketchpad on the htmlpage
 
 - [] Add context and addeventlisteners method to the class of the sketchpad.
 > '# represents that addeventlisteners is a private method
