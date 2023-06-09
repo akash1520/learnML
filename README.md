@@ -20,27 +20,27 @@ We will build a web app. In which you can draw anything and the app will try to 
 
 ### Things we'll do in the course
 > Phase 1:
-- [] Building a web app
-- [] Data Collection
-- [] Data Manipulation
-- [] Feature Extraction
-- [] Data processing and visualization
-- [] Nearest neighbour method
-- [] Data Scaling
-- [] K-Nearest neighbour method
-- [] How to calculate decision boundaries
+- [ ] Building a web app
+- [ ] Data Collection
+- [ ] Data Manipulation
+- [ ] Feature Extraction
+- [ ] Data processing and visualization
+- [ ] Nearest neighbour method
+- [ ] Data Scaling
+- [ ] K-Nearest neighbour method
+- [ ] How to calculate decision boundaries
 
 > Phase 2:
 
-- [] Higher dimension
-- [] Neural Networks
-- [] Data cleaning
-- [] Clustering
-- [] Graphs
+- [ ] Higher dimension
+- [ ] Neural Networks
+- [ ] Data cleaning
+- [ ] Clustering
+- [ ] Graphs
 
 > Extras:
-- [] Can say it's a good introduction to OOP if you haven't used it before.
-- [] Intro to DOM manipulation
+- [ ] Can say it's a good introduction to OOP if you haven't used it before.
+- [ ] Intro to DOM manipulation
 
 ### DAY 1
 
@@ -49,20 +49,20 @@ We will build a web app. In which you can draw anything and the app will try to 
 - [ ] create a class and constructor for SketchPad
 - [ ] Use script to spawn Sketchpad on the htmlpage
 
-- [] Add context and addeventlisteners method to the class of the sketchpad.
+- [ ] Add context and addeventlisteners method to the class of the sketchpad.
 > '# represents that addeventlisteners is a private method
-- [] Define addeventlisteners, use on mousedown event 
+- [ ] Define addeventlisteners, use on mousedown event 
 > Use getBoundingClientRect, clientX, clientY attributes to get mouse cordinates
-- [] Add attributes path and isDrawing to class Sketchpad
-- [] Add on mousemove event
-- [] Add on mouseup event
+- [ ] Add attributes path and isDrawing to class Sketchpad
+- [ ] Add on mousemove event
+- [ ] Add on mouseup event
 
-- [] Create and use a new private method called get mouse to simply get mouse cordinates easily, so we don't need to define the same functionality again and again.
-- [] Create a new private method redraw which will clear the canvas and draw the path.
-- [] Create a new utility called draw.js in Web/js folder, attach the script in HTML, do read the comment there.
+- [ ] Create and use a new private method called get mouse to simply get mouse cordinates easily, so we don't need to define the same functionality again and again.
+- [ ] Create a new private method redraw which will clear the canvas and draw the path.
+- [ ] Create a new utility called draw.js in Web/js folder, attach the script in HTML, do read the comment there.
 
 - (Learn more about Spread Operator)[https://medium.com/coding-at-dawn/how-to-use-the-spread-operator-in-javascript-b9e4a8b06fab]
 
-- [] create a public method called 'path' to create path using stroke, you might run into few errors so don't give up easily
+- [ ] create a public method called 'path' to create path using stroke, you might run into few errors so don't give up easily
 
 > I guess this much is more than enough for the day 1. Sayonara, do come back tomorrow. Also do checkout my social media profiles to connect with me. 
