@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+    <head>
+        <title>Data Creator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="content">
+            <h1>Data Creator</h1>
+            <br>
+            <div id="sketchPadContainer">
+
+            </div>
+        </div>
+        <!-- adding utilities before they're used is a good practice as this will spare you running into undefined function or variables errors. -->
+        <script src="js/draw.js"></script> 
+        <script src="js/sketchPad.js"></script>
+        <script>
+            const sketchPad = new SketchPad(sketchPadContainer);
+        </script>
+    </body>
+</html>
