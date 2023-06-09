@@ -61,7 +61,7 @@ We will build a web app. In which you can draw anything and the app will try to 
 - [ ] Create a new private method redraw which will clear the canvas and draw the path.
 - [ ] Create a new utility called draw.js in Web/js folder, attach the script in HTML, do read the comment there.
 
-> (Learn more about Spread Operator)[https://medium.com/coding-at-dawn/how-to-use-the-spread-operator-in-javascript-b9e4a8b06fab]
+> [Learn more about Spread Operator](https://medium.com/coding-at-dawn/how-to-use-the-spread-operator-in-javascript-b9e4a8b06fab)
 
 - [ ] create a public method called 'path' to create path using stroke, you might run into few errors so don't give up easily
 
