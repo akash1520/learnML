@@ -83,7 +83,7 @@ isDrawing is a boolean, which will work like a flag to decide whether we're in d
 - [ ] Add an undo button to the canvas
 - [ ] Add a onclick event listener to the button, define the undo functionality
 - [ ] Undo button shouldn't work after earasing the last stroke.
-- [ ] Shouldn't work when canvas is blank in start as well
+- [ ] Undo button shouldn't work when canvas is blank in start as well
 - [ ] Using normal event listeners will throw warning to you, so switch them with passive listeners
 
 - [ ] Create user onboarding, make sketchpad hidden for that time
@@ -92,3 +92,33 @@ isDrawing is a boolean, which will work like a flag to decide whether we're in d
 - [ ] Iterate through the array to tell the user what they need to draw
 - [ ] Store their drawing
 - [ ] Reset canvas when user go to next drawing, keep the method public as we're calling it outside the class
+
+### DAY 3
+
+```
+Thia part is called data collecting.
+```
+- [ ] Functionality to be able to download your drawing in a json format.
+> Now either create your own raw data by making people draw these objects and creating individual json file for each user or be lazy like me and download raw data from [here](https://github.com/gniziemazity/drawing-data)
+
+- [ ] Now create a folder called data, create two folders inside it called raw and dataset
+- [ ] Copy all the raw data you downloaded or created in data/raw folder
+- [ ] Create two folders inside dataset called img and json
+- [ ] Now create another folder called common (will be used to put shared filed amongst backend and frontend)
+- [ ] Now move draw.js to this common folder. (why you may ask. You'll realise soon)
+> Make necessary changes to be able to use that file in sketchpad.js
+
+- [ ] Create a folder called node(backend stuff will be here)
+- [ ] Create 'dataset_generator.js' in node
+- [ ] now follow these steps
+
+```
+1. Read the raw directory
+2. Read each file of this directory and create a json file for each label(basically each drawing), also create an image file for each label.
+
+
+THIS PART RIGHT HERE IS CALLED DATA SAMPLING
+
+```
+- [ ] Create cool loading animation for our dataset generator 
+>Okay let's wrap the day 3 here.
