@@ -55,7 +55,8 @@ class SketchPad {
             }
         }
 
-        this.canvas.onmouseup = () => {
+        // try attaching onmouseup event listener to canvas instead of document and notice the change, Hint: "mouse up"
+        document.onmouseup = () => {
             this.isDrawing = false;
         }
 
@@ -88,7 +89,7 @@ class SketchPad {
         },{passive:true})
 
         this.canvas.addEventListener('touchend', () => {
-            this.canvas.onmouseup()
+            document.onmouseup()
         },{passive:true})
 
         this.undoBtn.onclick=()=>{
