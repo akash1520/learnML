@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Data Creator</title>
+    
+  <script type="module" crossorigin src="/assets/index-cd5eec55.js"></script>
+  <link rel="stylesheet" href="/assets/index-3c0d40b5.css">
+</head>
+
+<body>
+    <div id="content">
+        <h1>Data Creator</h1>
+        <div>
+            <input type="text" placeholder="Type your name" id="user">
+            <span id="instructions"></span>
+            <button id="advanceBtn" onclick="start()">START</button>
+        </div>
+        <br>
+        <div id="sketchPadContainer" style="visibility: hidden;">
+
+        </div>
+    </div>
+    <!-- adding utilities before they're used is a good practice as this will spare you running into undefined function or variables errors. -->
+    <script src="../common/draw.js"></script>
+    <script src="js/sketchPad.js"></script>
+
+    
+
+</body>
+
+</html>
