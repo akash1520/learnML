@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Data Creator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="content">
+        <h1>Data Creator</h1>
+        <div>
+            <input type="text" placeholder="Type your name" id="user">
+            <span id="instructions"></span>
+            <button id="advanceBtn" onclick="start()">START</button>
+        </div>
+        <br>
+        <div id="sketchPadContainer" style="visibility: hidden;">
+
+        </div>
+    </div>
+    <!-- adding utilities before they're used is a good practice as this will spare you running into undefined function or variables errors. -->
+    <script src="../common/draw.js"></script>
+    <script src="js/sketchPad.js"></script>
+
+    <script type="module">
+
+        const sketchPad = new SketchPad(sketchPadContainer);
+        const accessToken = null;
+        const refreshToken = null;
+
+        import { initializeApp } from 'firebase/app';
+        import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore/lite';
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBKUOt9bfaX_Il95riXaRrsuqdGqFgp-fU",
+            authDomain: "machinelearning-78550.firebaseapp.com",
+            projectId: "machinelearning-78550",
+            storageBucket: "machinelearning-78550.appspot.com",
+            messagingSenderId: "770098984652",
+            appId: "1:770098984652:web:d0f5604ee0531d2bcf7469",
+            measurementId: "G-P2LJSPX1RR"
+        };
+
+        const app = initializeApp(firebaseConfig)
+        const db = getFirestore(app);
+
+        async function storeUserData(db,data) {
+            const {user,drawings,session}=data
+            try {
+                const docRef = await addDoc(collection(db, "users"), {
+                   name:user,
+                   drawings:drawings
+                },session);
+                console.log("Document written with ID: ", docRef.id);
+            } catch (e) {
+                console.error("Error adding document: ", e);
+            }
+
+        }
+
+        let index = 0;
+        const labels = ["car", "fish", "house", "tree", "bicycle", "guitar", "pencil", "clock"]
+        const data = {
+            user: null,
+            session: new Date().getTime(),
+            drawings: {}
+        };
+
+        const uploadData={
+            user: null,
+            session: data.session,
+            drawings: null
+            }
+
+        function start() { //user onboarding 
+            if (user.value == '') {
+                alert("Please type your name.");
+                return;
+            }
+            data.user = user.value;
+            uploadData.user = user.value;
+            user.style.display = 'none';
+            sketchPadContainer.style.visibility = 'visible';
+            const label = labels[index]
+            instructions.innerText = `Please draw a ${label}`
+            advanceBtn.innerText = "NEXT";
+            advanceBtn.onclick = next;
+        }
+
+        
+
+        function next() { //user goes to next drawing
+            if (sketchPad.paths.length === 0) {
+                alert("First draw something you lil bi***");
+                return;
+            }
+            const label = labels[index];
+            data.drawings[label] = sketchPad.paths; //store user drawings
+            sketchPad.reset(); //reset sketchpad, method is defined in sketchpad
+            index++;
+            if (index < labels.length) {
+                const nextLabel = labels[index]; //changing the label as user clicked next
+                instructions.innerText = `Please draw a ${nextLabel}`
+            } else {
+                sketchPadContainer.style.visibility = 'hidden';
+                instructions.innerText = 'Thank you!';
+                advanceBtn.innerText = 'SAVE';
+                advanceBtn.onclick = save;
+            }
+        }
+        function save() {
+
+            advanceBtn.style.display = 'none';
+            instructions.innerText = 'Take your downloaded file and place it alongside the others in the dataset!'
+
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8' + encodeURIComponent(JSON.stringify(data)))
+            const fileName = data.session + ".json";
+            element.setAttribute('download', fileName);
+            element.style.display = 'none';
+            document.body.append(element);
+            element.click();
+            document.body.removeChild(element);
+
+            uploadData.drawings=sketchPad.convertPathsToObject();
+            storeUserData(db,uploadData);
+
+
+        }
+        window.start=start
+    </script>
+
+</body>
+
+</html>
