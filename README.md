@@ -114,7 +114,8 @@ Thia part is called data collecting.
 
 ```
 1. Read the raw directory
-2. Read each file of this directory and create a json file for each label(basically each drawing), also create an image file for each label.
+2. Read each file of this directory and create a json file for each label(basically each drawing), 
+also create an image file for each label.
 
 
 In this part right here we're creating SAMPLES.
